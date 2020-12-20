@@ -111,10 +111,26 @@ export interface Planet {
 
 export interface HomeScreenPropsType {
   navigation: {
-    navigate: () => void;
+    navigate: (page: string, props?: {}) => void;
   };
-  loadMovies: (query?: string, page?: number) => void;
+  loadMovies: () => void;
+  loadPeoples: () => void;
+  loadStarships: () => void;
+  loadSpecies: () => void;
+  loadVehicles: () => void;
+  loadPlanets: () => void;
+  addFavoriteMovie: (movie: Movie) => void;
+  removeFavoriteMovie: (movie: Movie) => void;
+  addFavoriteCharacter: (character: People) => void;
+  removeFavoriteCharacter: (character: People) => void;
   movies: Movie[];
+  favoriteMovies: Movie[];
+  favoriteCharacters: People[];
+  peoples: People[];
+  starships: Starship[];
+  species: Species[];
+  vehicles: Vehicle[];
+  planets: Planet[];
   count: number;
   error: boolean;
   success: boolean;

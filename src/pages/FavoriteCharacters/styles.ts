@@ -4,11 +4,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: StatusBar.currentHeight || 0,
-    position: 'relative',
   },
   item: {
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
     backgroundColor: '#fff',
     padding: 20,
     marginVertical: 8,
@@ -24,7 +23,8 @@ const styles = StyleSheet.create({
     borderRadius: 5,
   },
   row: {
-    flexDirection: 'row',
+    flexDirection: 'column',
+    paddingBottom: 8,
   },
   title: {
     fontSize: 14,
@@ -33,20 +33,18 @@ const styles = StyleSheet.create({
   desc: {
     fontSize: 14,
   },
+  imageContainer: {
+    flex: 3,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   descriptionContainer: {
     flex: 1,
-    marginRight: 25,
-    paddingLeft: 20,
-    justifyContent: 'space-between',
+    padding: 20,
   },
   itemImage: {
-    width: 100,
-    height: 100,
-  },
-  error: {
-    fontSize: 14,
-    fontWeight: 'bold',
-    color: 'red'
+    width: '100%',
+    height: '100%',
   },
 });
 

@@ -14,8 +14,23 @@ const selectHomeDomain = (state) => state.home || initialState;
 const makeSelectLoading = () =>
   createSelector(selectHomeDomain, (subState) => subState.loading);
 
-const makeSelectList = () =>
-  createSelector(selectHomeDomain, (subState) => subState.list);
+const makeSelectMovies = () =>
+  createSelector(selectHomeDomain, (subState) => subState.movies);
+
+const makeSelectPeoples = () =>
+  createSelector(selectHomeDomain, (subState) => subState.peoples);
+
+const makeSelectStarships = () =>
+  createSelector(selectHomeDomain, (subState) => subState.starships);
+
+const makeSelectSpecies = () =>
+  createSelector(selectHomeDomain, (subState) => subState.species);
+
+const makeSelectVehicles = () =>
+  createSelector(selectHomeDomain, (subState) => subState.vehicles);
+
+const makeSelectPlanets = () =>
+  createSelector(selectHomeDomain, (subState) => subState.planets);
 
 const makeSelectError = () =>
   createSelector(selectHomeDomain, (subState) => subState.error);
@@ -34,7 +49,12 @@ export default makeSelectHome;
 export {
   selectHomeDomain,
   makeSelectLoading,
-  makeSelectList,
+  makeSelectMovies,
+  makeSelectPeoples,
+  makeSelectStarships,
+  makeSelectSpecies,
+  makeSelectVehicles,
+  makeSelectPlanets,
   makeSelectError,
   makeSelectSuccess,
 };
