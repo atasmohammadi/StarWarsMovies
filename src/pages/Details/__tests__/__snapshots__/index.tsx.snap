@@ -10,7 +10,7 @@ exports[`Details Screen should render with given state from Redux store 1`] = `
     }
   }
 >
-  <View
+  <RCTScrollView
     style={
       Object {
         "backgroundColor": "#fff",
@@ -31,119 +31,178 @@ exports[`Details Screen should render with given state from Redux store 1`] = `
       }
     }
   >
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 3,
-          "justifyContent": "center",
-        }
-      }
-    >
-      <Image
-        source={
-          Object {
-            "uri": "url",
-          }
-        }
+    <View>
+      <View
         style={
           Object {
-            "height": "100%",
-            "width": "100%",
+            "flex": 1,
+            "padding": 20,
           }
         }
-      />
+      >
+        <View
+          style={
+            Object {
+              "flexDirection": "column",
+              "paddingBottom": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Title: 
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+              }
+            }
+          >
+            A New Hope
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "flexDirection": "column",
+              "paddingBottom": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Release Date: 
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+              }
+            }
+          >
+            1977-05-25
+          </Text>
+        </View>
+        <View
+          style={
+            Object {
+              "flexDirection": "column",
+              "paddingBottom": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Characters: 
+          </Text>
+          <View
+            accessible={true}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 5,
+                "elevation": 3,
+                "marginVertical": 8,
+                "opacity": 1,
+                "padding": 10,
+                "shadowColor": "#000",
+                "shadowOffset": Object {
+                  "height": 1,
+                  "width": 0,
+                },
+                "shadowOpacity": 0.22,
+                "shadowRadius": 2.22,
+              }
+            }
+          >
+            <Text
+              style={
+                Object {
+                  "fontSize": 14,
+                }
+              }
+            >
+              Luke Skywalker
+            </Text>
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "flexDirection": "column",
+              "paddingBottom": 8,
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            Opening Crawl: 
+          </Text>
+          <Text
+            style={
+              Object {
+                "fontSize": 14,
+              }
+            }
+          >
+            It is a period of civil war.
+Rebel spaceships, striking
+from a hidden base, have won
+their first victory against
+the evil Galactic Empire.
+
+During the battle, Rebel
+spies managed to steal secret
+plans to the Empire's
+ultimate weapon, the DEATH
+STAR, an armored space
+station with enough power
+to destroy an entire planet.
+
+Pursued by the Empire's
+sinister agents, Princess
+Leia races home aboard her
+starship, custodian of the
+stolen plans that can save her
+people and restore
+freedom to the galaxy....
+          </Text>
+        </View>
+      </View>
     </View>
-    <View
-      style={
-        Object {
-          "flex": 1,
-          "padding": 20,
-        }
-      }
-    >
-      <View
-        style={
-          Object {
-            "flexDirection": "row",
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "fontSize": 14,
-              "fontWeight": "bold",
-            }
-          }
-        >
-          Title: 
-        </Text>
-        <Text
-          style={
-            Object {
-              "fontSize": 14,
-            }
-          }
-        >
-          movie2
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
-            "flexDirection": "row",
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "fontSize": 14,
-              "fontWeight": "bold",
-            }
-          }
-        >
-          Year: 
-        </Text>
-        <Text
-          style={
-            Object {
-              "fontSize": 14,
-            }
-          }
-        >
-          2001
-        </Text>
-      </View>
-      <View
-        style={
-          Object {
-            "flexDirection": "row",
-          }
-        }
-      >
-        <Text
-          style={
-            Object {
-              "fontSize": 14,
-              "fontWeight": "bold",
-            }
-          }
-        >
-          Type: 
-        </Text>
-        <Text
-          style={
-            Object {
-              "fontSize": 14,
-            }
-          }
-        >
-          movie
-        </Text>
-      </View>
-    </View>
-  </View>
+  </RCTScrollView>
 </RCTSafeAreaView>
 `;

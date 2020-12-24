@@ -35,7 +35,7 @@ export default function Details(props: DetailsScreenPropsType): React.ReactNode 
             <View style={styles.row}>
               <Text style={styles.title}>Characters: </Text>
               {characters.map(character => (
-                <TouchableOpacity style={styles.listItem} onPress={() => navigation.navigate('Character', {
+                <TouchableOpacity key={character.created} style={styles.listItem} onPress={() => navigation.navigate('Character', {
                   character,
                 })}>
                   <Text style={styles.desc}>{character.name}</Text>

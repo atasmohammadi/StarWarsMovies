@@ -1,20 +1,32 @@
 import * as React from 'react';
-import { SafeAreaView, FlatList, View, Text, Image, Button, TouchableOpacity } from 'react-native';
+import {
+  SafeAreaView,
+  FlatList,
+  View,
+  Text,
+  // Image,
+  Button,
+  TouchableOpacity
+} from 'react-native';
 import { SearchBar } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { compose, Dispatch } from 'redux';
 import { useInjectSaga } from '../../utils/injectSaga';
 import { filterMoviesList } from './helpers';
-import type { Movie, People, HomeScreenPropsType } from './types';
+import type {
+  Movie,
+  // People,
+  HomeScreenPropsType
+} from './types';
 import * as actions from './actions';
 import * as favoriteMoviesActions from '../FavoriteMovies/actions';
-import * as favoriteCharactersActions from '../FavoriteCharacters/actions';
+// import * as favoriteCharactersActions from '../FavoriteCharacters/actions';
 import styles from './styles';
 
 import * as selectors from './selectors';
 import * as favoriteMoviesSelectors from '../FavoriteMovies/selectors';
-import * as favoriteCharactersSelectors from '../FavoriteCharacters/selectors';
+// import * as favoriteCharactersSelectors from '../FavoriteCharacters/selectors';
 import saga from './saga';
 
 function Home(props: HomeScreenPropsType): React.ReactNode {
@@ -23,8 +35,8 @@ function Home(props: HomeScreenPropsType): React.ReactNode {
     loadPeoples,
     addFavoriteMovie,
     removeFavoriteMovie,
-    addFavoriteCharacter,
-    removeFavoriteCharacter,
+    // addFavoriteCharacter,
+    // removeFavoriteCharacter,
     // loadStarships,
     // loadSpecies,
     // loadVehicles,
@@ -37,7 +49,7 @@ function Home(props: HomeScreenPropsType): React.ReactNode {
     // planets,
     // error,
     favoriteMovies,
-    favoriteCharacters,
+    // favoriteCharacters,
     navigation
   } = props;
   useInjectSaga({ key: 'Home', saga });
@@ -108,29 +120,29 @@ function Home(props: HomeScreenPropsType): React.ReactNode {
 const mapStateToProps = createStructuredSelector({
   movies: selectors.makeSelectMovies(),
   peoples: selectors.makeSelectPeoples(),
-  starships: selectors.makeSelectStarships(),
-  species: selectors.makeSelectSpecies(),
-  vehicles: selectors.makeSelectVehicles(),
-  planets: selectors.makeSelectPlanets(),
+  // starships: selectors.makeSelectStarships(),
+  // species: selectors.makeSelectSpecies(),
+  // vehicles: selectors.makeSelectVehicles(),
+  // planets: selectors.makeSelectPlanets(),
   loading: selectors.makeSelectLoading(),
   error: selectors.makeSelectError(),
   success: selectors.makeSelectSuccess(),
   favoriteMovies: favoriteMoviesSelectors.makeSelectMovies(),
-  favoriteCharacters: favoriteCharactersSelectors.makeSelectCharacters(),
+  // favoriteCharacters: favoriteCharactersSelectors.makeSelectCharacters(),
 });
 
 function mapDispatchToProps(dispatch: Dispatch) {
   return {
     loadMovies: () => dispatch(actions.loadMovies()),
     loadPeoples: () => dispatch(actions.loadPeoples()),
-    loadStarships: () => dispatch(actions.loadStarships()),
-    loadSpecies: () => dispatch(actions.loadSpecies()),
-    loadVehicles: () => dispatch(actions.loadVehicles()),
-    loadPlanets: () => dispatch(actions.loadPlanets()),
+    // loadStarships: () => dispatch(actions.loadStarships()),
+    // loadSpecies: () => dispatch(actions.loadSpecies()),
+    // loadVehicles: () => dispatch(actions.loadVehicles()),
+    // loadPlanets: () => dispatch(actions.loadPlanets()),
     addFavoriteMovie: (movie: Movie) => dispatch(favoriteMoviesActions.addFavorite(movie)),
     removeFavoriteMovie: (movie: Movie) => dispatch(favoriteMoviesActions.removeFavorite(movie)),
-    addFavoriteCharacter: (character: People) => dispatch(favoriteCharactersActions.addFavorite(character)),
-    removeFavoriteCharacter: (character: People) => dispatch(favoriteCharactersActions.removeFavorite(character)),
+    // addFavoriteCharacter: (character: People) => dispatch(favoriteCharactersActions.addFavorite(character)),
+    // removeFavoriteCharacter: (character: People) => dispatch(favoriteCharactersActions.removeFavorite(character)),
   };
 }
 

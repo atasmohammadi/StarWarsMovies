@@ -36,7 +36,7 @@ function FavoriteMovies(props: FavoriteMoviesScreenPropsType): React.ReactNode {
           {!!characters && (
             <View style={styles.row}>
               <Text style={styles.title}>Characters: </Text>
-              <Text style={styles.desc}>{characters.map(character => character.name).join(", ")}</Text>
+              <Text style={styles.desc}>{characters.map(character => character?.name).join(", ")}</Text>
             </View>
           )}
           <Button title="Remove Favorite" onPress={() => removeFavorite(item)} />
